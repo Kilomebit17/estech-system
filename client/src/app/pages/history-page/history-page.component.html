@@ -1,0 +1,46 @@
+<div class="page-title">
+  <h4>Orders History</h4>
+  <button
+    class="btn btn-small js-filter"
+    data-tooltip="Open Filter"
+    data-position="left"
+    #tooltip>
+    <i class="material-icons" (click)="isFilter = !isFilter"
+    >filter_list</i>
+  </button>
+</div>
+
+<app-history-filter
+  *ngIf="isFilter"
+  (onFilter)="applyFilter($event)"
+></app-history-filter>
+<div *ngIf="!reloading; else reloadingLoader">
+  <div *ngIf="orders.length > 0; else empty">
+    <app-history-list [orders]="orders"></app-history-list>
+    <div class="center mb2" *ngIf="loadMoreOrders">
+      <button
+        class="btn waves-effect grey darken-1 btn-small"
+        (click)="LoadMore()"
+        *ngIf="!loading; else loader"
+      >Load
+        More
+      </button>
+      <ng-template #loader>
+        <div class="center">
+          <app-preloader></app-preloader>
+        </div>
+      </ng-template>
+    </div>
+  </div>
+  <ng-template #empty>
+    <div class="center">
+      <h4>Orders doesn't found</h4>
+    </div>
+  </ng-template>
+</div>
+<ng-template #reloadingLoader>
+  <div class="content">
+    <app-preloader></app-preloader>
+  </div>
+</ng-template>
+

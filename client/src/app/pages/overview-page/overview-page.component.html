@@ -1,0 +1,52 @@
+<div class="page-title">
+  <h4>
+    Review for yesterday
+  </h4>
+</div>
+
+<div class="row" *ngIf="date$ | async as date; else loader">
+  <div class="col s12 l6">
+    <div class="card light-blue lighten-2 white-text">
+      <div class="card-content">
+        <span class="card-title">Gain:</span>
+        <h3>{{date.gain.yesterday | currency}}</h3>
+        <h3
+          class="m0 mb1"
+          [ngClass]="{
+          'green-text text-darken-2':date.gain.isHigher,
+          'red-text':!date.gain.isHigher
+          }"
+        >
+          <i class="material-icons">{{date.gain.isHigher ? 'arrow_upward' : 'arrow_downward'}}</i>
+          {{date.gain.percent}}%
+        </h3>
+        <p>Gain in your business on yesterday {{date.gain.percent}}% {{date.gain.isHigher ? 'upper' : 'lower'}}
+          middle:  {{date.gain.compare | currency}}. in day</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="col s12 l6">
+    <div class="card orange lighten-2 white-text">
+      <div class="card-content">
+        <span class="card-title">Orders:</span>
+        <h3>{{date.orders.yesterday}} orders.</h3>
+        <h3 class="m0 mb1"
+            [ngClass]="{
+          'green-text text-darken-2': date.orders.isHigher,
+          'red-text': !date.orders.isHigher
+        }">
+          <i class="material-icons">{{date.orders.isHigher ? 'arrow_upward' : 'arrow_downward'}}</i>
+          {{date.orders.percent}}%
+        </h3>
+        <p>The number of orders yesterday was {{date.orders.percent}}% {{date.orders.isHigher ? 'upper' : 'lower'}} on
+          the average account: {{date.orders.compare | currency}} orders per day</p>
+      </div>
+    </div>
+  </div>
+</div>
+<ng-template #loader>
+  <div class="center">
+    <app-preloader></app-preloader>
+  </div>
+</ng-template>
