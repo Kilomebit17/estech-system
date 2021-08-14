@@ -2,12 +2,12 @@
 ## Development server
 
 ### Open your terminal
-### Clone this repository
-### open project folder
-### in terminal write
+### Clone this repository - git clone https://github.com/Kilomebit17/estech-crm-system.git
+### open project folder - cd estech-crm-system
+### in terminal write 
 
-Run `npm install` after run `npm run client-install` 
+ `npm install` && `npm run client-install`  
 
-Run `npm run dev` for a dev server. Navigate to `http://localhost:4200/
+ after after installation write `npm run dev` for a dev server. Navigate to `http://localhost:4200/
 
 ## Enjoy
