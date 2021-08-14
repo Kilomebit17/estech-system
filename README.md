@@ -1,10 +1,10 @@
 
 ## Development server
 
-Open your terminal
-Clone this repository
-open project folder
-in terminal write
+### Open your terminal
+### Clone this repository
+### open project folder
+### in terminal write
 
 Run `npm install` after run `npm run client-install` 
 
