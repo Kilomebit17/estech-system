@@ -6,8 +6,8 @@
 ### open project folder - cd estech-crm-system
 ### in terminal write 
 
- `npm install` && `npm run client-install`  
+important the first `npm run client-install` the second `npm install` 
 
- after after installation write `npm run dev` for a dev server. Navigate to `http://localhost:4200/
+ after installation write `npm run dev` for a dev server. Open in browser `http://localhost:4200/
 
 ## Enjoy
