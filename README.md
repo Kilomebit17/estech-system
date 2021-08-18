@@ -10,4 +10,6 @@ important the first `npm run client-install` the second `npm install`
 
  after installation write `npm run dev` for a dev server. Open in browser `http://localhost:4200/
 
+
+### this application on hosting - https://fierce-cliffs-31960.herokuapp.com/
 ## Enjoy
